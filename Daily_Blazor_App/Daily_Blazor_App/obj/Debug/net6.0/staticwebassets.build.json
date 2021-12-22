@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "Hash": "0MZHwq73Yoyo4DH0qS0dHw4RYWBEQRbPP3y8hMap8go=",
+  "Source": "Daily_Blazor_App",
+  "BasePath": "_content/Daily_Blazor_App",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Daily_Blazor_App\\wwwroot",
+      "Source": "Daily_Blazor_App",
+      "ContentRoot": "C:\\Users\\sh\\Source\\Repos\\daily_blazor\\Daily_Blazor_App\\Daily_Blazor_App\\wwwroot\\",
+      "BasePath": "_content/Daily_Blazor_App",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\sh\\.nuget\\packages\\mudblazor\\6.0.2\\staticwebassets\\MudBlazor.min.css",
+      "SourceId": "MudBlazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\sh\\.nuget\\packages\\mudblazor\\6.0.2\\staticwebassets\\",
+      "BasePath": "_content/MudBlazor",
+      "RelativePath": "MudBlazor.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\sh\\.nuget\\packages\\mudblazor\\6.0.2\\staticwebassets\\MudBlazor.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\sh\\.nuget\\packages\\mudblazor\\6.0.2\\staticwebassets\\MudBlazor.min.js",
+      "SourceId": "MudBlazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\sh\\.nuget\\packages\\mudblazor\\6.0.2\\staticwebassets\\",
+      "BasePath": "_content/MudBlazor",
+      "RelativePath": "MudBlazor.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\sh\\.nuget\\packages\\mudblazor\\6.0.2\\staticwebassets\\MudBlazor.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\sh\\Source\\Repos\\daily_blazor\\Daily_Blazor_App\\Daily_Blazor_App\\wwwroot\\favicon.ico",
+      "SourceId": "Daily_Blazor_App",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sh\\Source\\Repos\\daily_blazor\\Daily_Blazor_App\\Daily_Blazor_App\\wwwroot\\",
+      "BasePath": "_content/Daily_Blazor_App",
+      "RelativePath": "favicon.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.ico"
+    }
+  ]
+}
