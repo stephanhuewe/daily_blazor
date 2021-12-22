@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tGp6rIe2hKM0kE5dVuVkeqpAhWJWMdtuG6lWtDccRQm2E1QmFqazM7LJ8ZkEjnUrX6lb+yhAUDCKz8flYEt+YQ==",
+  "dgSpecHash": "A+Xp02jew6Ue/kAQ/CJSBbxQXCAsdmbVtAcc5CeRjgZAXhfLWPSfGccXjjpwmYtnHnAXcEd2cNZJqag3Rp2LCA==",
   "success": true,
   "projectFilePath": "C:\\Users\\sh\\Source\\Repos\\daily_blazor\\Daily_Blazor_App\\Daily_Blazor_App\\Daily_Blazor_App.csproj",
   "expectedPackageFiles": [
@@ -17,6 +17,7 @@
     "C:\\Users\\sh\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\sh\\.nuget\\packages\\microsoft.jsinterop\\6.0.0\\microsoft.jsinterop.6.0.0.nupkg.sha512",
     "C:\\Users\\sh\\.nuget\\packages\\mudblazor\\6.0.2\\mudblazor.6.0.2.nupkg.sha512",
+    "C:\\Users\\sh\\.nuget\\packages\\parse\\2.0.0-develop-1\\parse.2.0.0-develop-1.nupkg.sha512",
     "C:\\Users\\sh\\.nuget\\packages\\system.io.pipelines\\6.0.0\\system.io.pipelines.6.0.0.nupkg.sha512",
     "C:\\Users\\sh\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],

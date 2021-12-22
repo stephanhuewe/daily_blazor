@@ -31,7 +31,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\sh\\Source\\Repos\\daily_blazor\\Daily_Blazor_App\\Daily_Blazor_App_Logic\\Daily_Blazor_App_Logic.csproj": {
+                "projectPath": "C:\\Users\\sh\\Source\\Repos\\daily_blazor\\Daily_Blazor_App\\Daily_Blazor_App_Logic\\Daily_Blazor_App_Logic.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -63,6 +67,70 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\sh\\Source\\Repos\\daily_blazor\\Daily_Blazor_App\\Daily_Blazor_App_Logic\\Daily_Blazor_App_Logic.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\sh\\Source\\Repos\\daily_blazor\\Daily_Blazor_App\\Daily_Blazor_App_Logic\\Daily_Blazor_App_Logic.csproj",
+        "projectName": "Daily_Blazor_App_Logic",
+        "projectPath": "C:\\Users\\sh\\Source\\Repos\\daily_blazor\\Daily_Blazor_App\\Daily_Blazor_App_Logic\\Daily_Blazor_App_Logic.csproj",
+        "packagesPath": "C:\\Users\\sh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sh\\Source\\Repos\\daily_blazor\\Daily_Blazor_App\\Daily_Blazor_App_Logic\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\sh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.devexpress.com/AJdiHzfvyWMK4ZQvovDm6CoVmbNJTNAaQj3Qeo1OXzqg9eliLe/api": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "parse": {
+              "target": "Package",
+              "version": "[2.0.0-develop-1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

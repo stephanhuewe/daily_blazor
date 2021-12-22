@@ -168,6 +168,15 @@
           "buildMultiTargeting/MudBlazor.props": {}
         }
       },
+      "Parse/2.0.0-develop-1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Parse.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Parse.dll": {}
+        }
+      },
       "System.IO.Pipelines/6.0.0": {
         "type": "package",
         "compile": {
@@ -190,6 +199,19 @@
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "Daily_Blazor_App_Logic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "parse": "2.0.0-develop-1"
+        },
+        "compile": {
+          "bin/placeholder/Daily_Blazor_App_Logic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Daily_Blazor_App_Logic.dll": {}
         }
       }
     }
@@ -478,6 +500,21 @@
         "staticwebassets/MudBlazor.min.js"
       ]
     },
+    "Parse/2.0.0-develop-1": {
+      "sha512": "D+aE8JXxekYjAyADiB8+ruuRxC/wGSMf3zpdjFRxlgkvgG/EFQO+5OeA0dOH5SKpM3avKzLmE6k5il06ZrfnEg==",
+      "type": "package",
+      "path": "parse/2.0.0-develop-1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/netstandard2.0/Parse.dll",
+        "lib/netstandard2.0/Parse.xml",
+        "parse-logo.png",
+        "parse.2.0.0-develop-1.nupkg.sha512",
+        "parse.nuspec"
+      ]
+    },
     "System.IO.Pipelines/6.0.0": {
       "sha512": "mXX66shZ4xLlI3vNLaJ0lt8OIZdmXTvIqXRdQX5HLVGSkLhINLsVhyZuX2UdRFnOGkqnwmMUs40pIIQ7mna4+A==",
       "type": "package",
@@ -527,10 +564,16 @@
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Daily_Blazor_App_Logic/1.0.0": {
+      "type": "project",
+      "path": "../Daily_Blazor_App_Logic/Daily_Blazor_App_Logic.csproj",
+      "msbuildProject": "../Daily_Blazor_App_Logic/Daily_Blazor_App_Logic.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Daily_Blazor_App_Logic >= 1.0.0",
       "MudBlazor >= 6.0.2"
     ]
   },
@@ -565,7 +608,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\sh\\Source\\Repos\\daily_blazor\\Daily_Blazor_App\\Daily_Blazor_App_Logic\\Daily_Blazor_App_Logic.csproj": {
+              "projectPath": "C:\\Users\\sh\\Source\\Repos\\daily_blazor\\Daily_Blazor_App\\Daily_Blazor_App_Logic\\Daily_Blazor_App_Logic.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
