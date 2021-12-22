@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "dlq1rnkycpCzNSg3LUVYqeaXEeLUnGHoIg9EstuBXUNj0dns7UrtzjoyuX6DDXpmd3Dp/aDu3F7baTSVbVf4/A==",
+  "dgSpecHash": "ap0+nnh7k+uJN2MpKV2JuF+1WD5JSWlSRJc56JvCSznOWabc+o1XQBOz795zih0LKoI1rOOR0Qt5K1m+Pm3CVg==",
   "success": true,
   "projectFilePath": "C:\\Users\\sh\\Source\\Repos\\daily_blazor\\Daily_Blazor_App\\Daily_Blazor_App_Logic\\Daily_Blazor_App_Logic.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\sh\\.nuget\\packages\\parse\\2.0.0-develop-1\\parse.2.0.0-develop-1.nupkg.sha512"
+  ],
   "logs": []
 }
