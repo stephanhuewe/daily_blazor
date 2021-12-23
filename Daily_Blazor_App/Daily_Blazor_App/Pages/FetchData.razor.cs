@@ -6,8 +6,10 @@ namespace Daily_Blazor_App.Pages
     public partial class FetchData
     {
         private Person[] forecasts;
+        private string newFirstName;
+        private string newLastName;
 
-        private async void CreatePersonDemo()
+        private async void CreatePerson(string firstName, string lastName)
         {
             ParseClient client = new ParseClient(Daily_Blazor_App_Logic.Consts.APP_ID, Daily_Blazor_App_Logic.Consts.APP_URI, Daily_Blazor_App_Logic.Consts.NETKEY);
 
@@ -25,8 +27,8 @@ namespace Daily_Blazor_App.Pages
             person.Bind(client);
 
             // Set some Properties
-            person.Set("firstName", "Mickey");
-            person.Set("lastName", "Mouse");
+            person.Set("firstName", firstName);
+            person.Set("lastName", lastName);
 
             // Save
             await person.SaveAsync();
@@ -34,6 +36,8 @@ namespace Daily_Blazor_App.Pages
 
         protected override async Task OnInitializedAsync()
         {
+            // Code Samples
+            // https://github.com/parse-community/Parse-SDK-dotNET
             ParseClient client = new ParseClient(Daily_Blazor_App_Logic.Consts.APP_ID, Daily_Blazor_App_Logic.Consts.APP_URI, Daily_Blazor_App_Logic.Consts.NETKEY);
 
             // Login is necessary from the SDK, even if public r/w access is active
@@ -55,6 +59,16 @@ namespace Daily_Blazor_App.Pages
             }
 
             forecasts = Persons.ToArray();
+        }
+
+        private void AddPerson()
+        {
+            if (!string.IsNullOrWhiteSpace(newFirstName) && !string.IsNullOrWhiteSpace(newLastName))
+            {
+                CreatePerson(newFirstName, newLastName);
+                newFirstName = string.Empty;
+                newLastName = string.Empty;
+            }
         }
     }
 }
