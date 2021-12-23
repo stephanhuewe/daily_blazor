@@ -6,6 +6,7 @@ namespace Daily_Blazor_App.Pages
     public partial class FetchData
     {
         private Person[] forecasts;
+        private Person[] selectedItems;
         private string newFirstName;
         private string newLastName;
 
