@@ -50,7 +50,7 @@ else
     </FooterContent>
 </MudTable>
 
-    <MudTable Items="forecasts" Hover="true" SortLabel="Sort By" Elevation="0">
+    @*<MudTable Items="forecasts" Hover="true" SortLabel="Sort By" Elevation="0">
         <HeaderContent>
             <MudTHeadRow IsCheckable="true">
                 <MudTh><MudTableSortLabel InitialDirection="SortDirection.Ascending" SortBy="new Func<WeatherForecast, object>(x=>x.Date)">FirstName</MudTableSortLabel></MudTh>
@@ -69,7 +69,7 @@ else
         <PagerContent> 
             <MudTablePager PageSizeOptions="new int[]{50, 100}" />
         </PagerContent>
-    </MudTable>
+    </MudTable>*@
 
     <MudTextField Label="First Name" @bind-Value="newFirstName" Variant="Variant.Text"/>
     <MudTextField Label="Last Name" @bind-Value="newLastName" Variant="Variant.Text" />
