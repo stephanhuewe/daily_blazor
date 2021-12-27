@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daily_Blazor_App", "Daily_Blazor_App\Daily_Blazor_App.csproj", "{6C8FD3D7-5ACF-48E8-87F4-1049CB07E50D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Daily_Blazor_App", "Daily_Blazor_App\Daily_Blazor_App.csproj", "{6C8FD3D7-5ACF-48E8-87F4-1049CB07E50D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daily_Blazor_App_Logic", "Daily_Blazor_App_Logic\Daily_Blazor_App_Logic.csproj", "{91267FC4-8ED3-4486-9445-9ED1075F1DE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Daily_Blazor_App_Logic", "Daily_Blazor_App_Logic\Daily_Blazor_App_Logic.csproj", "{91267FC4-8ED3-4486-9445-9ED1075F1DE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daily_Blazor_App_Tests", "Daily_Blazor_App_Tests\Daily_Blazor_App_Tests.csproj", "{3C404B9B-E2EF-40B6-A35A-7AAF09B39B7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{91267FC4-8ED3-4486-9445-9ED1075F1DE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91267FC4-8ED3-4486-9445-9ED1075F1DE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91267FC4-8ED3-4486-9445-9ED1075F1DE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C404B9B-E2EF-40B6-A35A-7AAF09B39B7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C404B9B-E2EF-40B6-A35A-7AAF09B39B7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C404B9B-E2EF-40B6-A35A-7AAF09B39B7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C404B9B-E2EF-40B6-A35A-7AAF09B39B7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
