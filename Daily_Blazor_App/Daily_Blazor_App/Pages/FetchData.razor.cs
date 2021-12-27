@@ -1,4 +1,5 @@
 ﻿using Daily_Blazor_App.Data;
+using MudBlazor;
 using Parse;
 
 namespace Daily_Blazor_App.Pages
@@ -9,6 +10,12 @@ namespace Daily_Blazor_App.Pages
         private Person[] selectedItems;
         private string newFirstName;
         private string newLastName;
+        private bool visible;
+        private int rating;
+        private void OpenDialog() => visible = true;
+        void Submit() => visible = false;
+
+        private DialogOptions dialogOptions = new() { FullWidth = true };
 
         private async void CreatePerson(string firstName, string lastName)
         {
@@ -70,6 +77,7 @@ namespace Daily_Blazor_App.Pages
                 newFirstName = string.Empty;
                 newLastName = string.Empty;
             }
+            visible = false;
         }
     }
 }
