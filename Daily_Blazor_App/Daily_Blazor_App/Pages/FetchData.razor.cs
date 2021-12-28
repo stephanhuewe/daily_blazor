@@ -12,7 +12,7 @@ namespace Daily_Blazor_App.Pages
         private bool visible;
         private int rating;
         private HashSet<Person> selectedItems = new HashSet<Person>();
-
+        bool _forceRerender;
 
         private void OpenDialog() => visible = true;
         void Submit() => visible = false;
@@ -35,10 +35,12 @@ namespace Daily_Blazor_App.Pages
                 var person = await client.GetQuery("Person").WhereEqualTo("objectId", objectId).FirstAsync();
                 await person.DeleteAsync();
             }
+
             StateHasChanged();
+            await OnInitializedAsync();
         }
 
-        private async void CreatePerson(string firstName, string lastName)
+        private async Task CreatePerson(string firstName, string lastName)
         {
             var client = GetParseClient();
 
@@ -63,6 +65,18 @@ namespace Daily_Blazor_App.Pages
             await person.SaveAsync();
 
             StateHasChanged();
+            await OnInitializedAsync();
+
+        }
+
+        protected override bool ShouldRender()
+        {
+            if (_forceRerender)
+            {
+                _forceRerender = false;
+                return true;
+            }
+            return base.ShouldRender();
         }
 
         protected override async Task OnInitializedAsync()
@@ -93,11 +107,11 @@ namespace Daily_Blazor_App.Pages
             forecasts = Persons.ToArray();
         }
 
-        private void AddPerson()
+        private async Task AddPerson()
         {
             if (!string.IsNullOrWhiteSpace(newFirstName) && !string.IsNullOrWhiteSpace(newLastName))
             {
-                CreatePerson(newFirstName, newLastName);
+                await CreatePerson(newFirstName, newLastName);
                 newFirstName = string.Empty;
                 newLastName = string.Empty;
             }

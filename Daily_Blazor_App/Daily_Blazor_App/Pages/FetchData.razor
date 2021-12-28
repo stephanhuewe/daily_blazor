@@ -1,7 +1,7 @@
 ﻿@page "/fetchdata"
 @using Daily_Blazor_App.Data
 @inject WeatherForecastService ForecastService
-
+@inject NavigationManager NavigationManager
 
 <PageTitle>People Management</PageTitle>
 
@@ -17,29 +17,31 @@ else
           CustomHeader="true" CustomFooter="true" HeaderClass="table-head-bordered" FooterClass="table-foot-bordered">
     <HeaderContent>
         <MudTHeadRow IgnoreCheckbox="true" Class="header-centered">
-            <MudTh colspan="6">Periodic Elements Info</MudTh>
+            <MudTh colspan="6">People Info</MudTh>
         </MudTHeadRow>
         <MudTHeadRow Class="header-centered">
             <MudTh colspan="2">Basic</MudTh>
-            <MudTh colspan="3">Extended</MudTh>
+            <MudTh colspan="3">Additional Data</MudTh>
         </MudTHeadRow>
         <MudTHeadRow IsCheckable="true">
             <MudTh>ObjectId</MudTh> 
             <MudTh>First Name</MudTh> 
             <MudTh>Last Name</MudTh>
-            <MudTh>Name</MudTh>
+            <MudTh>Hobby</MudTh>
             <MudTh>Position</MudTh>
-            <MudTh>Molar mass</MudTh>
+            <MudTh>Telephne</MudTh>
         </MudTHeadRow>
     </HeaderContent>
     <RowTemplate>
-        <MudTd DataLabel="Nr">@context.FirstName</MudTd>
-        <MudTd DataLabel="Sign">@context.LastName</MudTd>        
+        <MudTd DataLabel="Nr">@context.ObjectId</MudTd>
+        <MudTd DataLabel="FirstName">@context.FirstName</MudTd>
+        <MudTd DataLabel="LastName">@context.LastName</MudTd>
+        <MudTd DataLabel="Hobby">@context.LastName</MudTd>        
         @*<MudTd DataLabel="Position" HideSmall="_hidePosition">@context.Position</MudTd>
         <MudTd DataLabel="Molar mass">@context.Molar</MudTd>*@
     </RowTemplate>
     <FooterContent>
-        <MudTFootRow Class="bold-text">
+        @*<MudTFootRow Class="bold-text">
             <MudTd>Nr</MudTd>
             <MudTd>Sign</MudTd>
             <MudTd>Name</MudTd>
@@ -47,8 +49,8 @@ else
             <MudTd>Molar mass</MudTd>
         </MudTFootRow>
         <MudTFootRow IsCheckable="true">
-            @*<MudTd colspan="5">Selected: @selectedItems.Count()</MudTd>*@
-        </MudTFootRow>
+            <MudTd colspan="5">Selected: @selectedItems.Count()</MudTd>
+        </MudTFootRow>*@
     </FooterContent>    
 </MudTable>
 <MudButton Variant="Variant.Filled" Color="Color.Secondary" @onclick="() => DeletePerson(selectedItems.Select(x => x.ObjectId).ToList())">Delete Selected Person</MudButton >

@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Daily_Blazor_App", "Daily_B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Daily_Blazor_App_Logic", "Daily_Blazor_App_Logic\Daily_Blazor_App_Logic.csproj", "{91267FC4-8ED3-4486-9445-9ED1075F1DE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daily_Blazor_App_Tests", "Daily_Blazor_App_Tests\Daily_Blazor_App_Tests.csproj", "{3C404B9B-E2EF-40B6-A35A-7AAF09B39B7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Daily_Blazor_App_Tests", "Daily_Blazor_App_Tests\Daily_Blazor_App_Tests.csproj", "{3C404B9B-E2EF-40B6-A35A-7AAF09B39B7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
