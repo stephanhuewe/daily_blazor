@@ -2,6 +2,7 @@
 @using Daily_Blazor_App.Data
 @inject WeatherForecastService ForecastService
 
+
 <PageTitle>People Management</PageTitle>
 
 <MudText Typo="Typo.h3" GutterBottom="true">List of people</MudText>
@@ -12,7 +13,7 @@
 }
 else
 {
-    <MudTable Items="@forecasts.Take(10)" MultiSelection="true"  Hover="true" Breakpoint="Breakpoint.Sm" Striped="true" Bordered="true"
+    <MudTable Items="@forecasts.Take(10)" @bind-SelectedItems="selectedItems" MultiSelection="true"  Hover="true" Breakpoint="Breakpoint.Sm" Striped="true" Bordered="true"
           CustomHeader="true" CustomFooter="true" HeaderClass="table-head-bordered" FooterClass="table-foot-bordered">
     <HeaderContent>
         <MudTHeadRow IgnoreCheckbox="true" Class="header-centered">
@@ -23,6 +24,7 @@ else
             <MudTh colspan="3">Extended</MudTh>
         </MudTHeadRow>
         <MudTHeadRow IsCheckable="true">
+            <MudTh>ObjectId</MudTh> 
             <MudTh>First Name</MudTh> 
             <MudTh>Last Name</MudTh>
             <MudTh>Name</MudTh>
@@ -49,7 +51,7 @@ else
         </MudTFootRow>
     </FooterContent>    
 </MudTable>
-<MudButton Variant="Variant.Filled" Color="Color.Secondary"  @onclick="AddPerson">Delete Selected Person</MudButton >
+<MudButton Variant="Variant.Filled" Color="Color.Secondary" @onclick="() => DeletePerson(selectedItems.Select(x => x.ObjectId).ToList())">Delete Selected Person</MudButton >
 
     @*<MudTable Items="forecasts" Hover="true" SortLabel="Sort By" Elevation="0">
         <HeaderContent>

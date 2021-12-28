@@ -7,19 +7,40 @@ namespace Daily_Blazor_App.Pages
     public partial class FetchData
     {
         private Person[] forecasts;
-        private Person[] selectedItems;
         private string newFirstName;
         private string newLastName;
         private bool visible;
         private int rating;
+        private HashSet<Person> selectedItems = new HashSet<Person>();
+
+
         private void OpenDialog() => visible = true;
         void Submit() => visible = false;
 
+        private ParseClient GetParseClient()
+        {
+            ParseClient client = new ParseClient(Daily_Blazor_App_Logic.Consts.APP_ID, Daily_Blazor_App_Logic.Consts.APP_URI, Daily_Blazor_App_Logic.Consts.NETKEY);
+            return client;
+        }
+
         private DialogOptions dialogOptions = new() { FullWidth = true };
+
+        protected async Task DeletePerson(List<string> objectIds)
+        {
+            var client = GetParseClient();
+            await client.LogInAsync("demo", "demo");
+            
+            foreach (var objectId in objectIds)
+            {
+                var person = await client.GetQuery("Person").WhereEqualTo("objectId", objectId).FirstAsync();
+                await person.DeleteAsync();
+            }
+            StateHasChanged();
+        }
 
         private async void CreatePerson(string firstName, string lastName)
         {
-            ParseClient client = new ParseClient(Daily_Blazor_App_Logic.Consts.APP_ID, Daily_Blazor_App_Logic.Consts.APP_URI, Daily_Blazor_App_Logic.Consts.NETKEY);
+            var client = GetParseClient();
 
             // Login is necessary from the SDK, even if public r/w access is active
             // See: https://github.com/parse-community/Parse-SDK-dotNET/issues/337
@@ -40,13 +61,15 @@ namespace Daily_Blazor_App.Pages
 
             // Save
             await person.SaveAsync();
+
+            StateHasChanged();
         }
 
         protected override async Task OnInitializedAsync()
         {
             // Code Samples
             // https://github.com/parse-community/Parse-SDK-dotNET
-            ParseClient client = new ParseClient(Daily_Blazor_App_Logic.Consts.APP_ID, Daily_Blazor_App_Logic.Consts.APP_URI, Daily_Blazor_App_Logic.Consts.NETKEY);
+            var client = GetParseClient();
 
             // Login is necessary from the SDK, even if public r/w access is active
             // See: https://github.com/parse-community/Parse-SDK-dotNET/issues/337
@@ -61,6 +84,7 @@ namespace Daily_Blazor_App.Pages
             foreach (ParseObject? onlinePerson in OnlinePersons)
             {
                 Person p = new Person();
+                p.ObjectId = onlinePerson.ObjectId.ToString();
                 p.FirstName = onlinePerson["firstName"].ToString();
                 p.LastName = onlinePerson["lastName"].ToString();
                 Persons.Add(p);
