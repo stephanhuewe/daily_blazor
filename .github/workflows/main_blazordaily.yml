@@ -24,9 +24,15 @@ jobs:
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
+        working-directory: Daily_Blazor_App
+        
+      - name: Run Tests
+        run: dotnet test --configuration Release --no-build
+        working-directory: Daily_Blazor_App
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        working-directory: Daily_Blazor_App
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
