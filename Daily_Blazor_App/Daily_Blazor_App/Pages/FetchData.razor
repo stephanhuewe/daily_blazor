@@ -2,6 +2,7 @@
 @using Daily_Blazor_App.Data
 @inject WeatherForecastService ForecastService
 @inject NavigationManager NavigationManager
+@inject ISnackbar Snackbar
 
 <PageTitle>People Management</PageTitle>
 
@@ -93,6 +94,7 @@ else
     <DialogContent>
         <MudTextField Label="First Name" @bind-Value="newFirstName" Variant="Variant.Text"/>
         <MudTextField Label="Last Name" @bind-Value="newLastName" Variant="Variant.Text" />        
+        <MudTextField Label="Name Reverse" @bind-Value="NameReverse" Variant="Variant.Text" ReadOnly/>  
     </DialogContent>
     <DialogActions>
         <MudButton Variant="Variant.Filled" Color="Color.Primary"  @onclick="AddPerson">Add & Close</MudButton >

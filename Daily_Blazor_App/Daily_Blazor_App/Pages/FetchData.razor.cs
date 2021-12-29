@@ -9,6 +9,7 @@ namespace Daily_Blazor_App.Pages
         private Person[] forecasts;
         private string newFirstName;
         private string newLastName;
+        private string nameReverse;
         private bool visible;
         private int rating;
         private HashSet<Person> selectedItems = new HashSet<Person>();
@@ -25,6 +26,20 @@ namespace Daily_Blazor_App.Pages
 
         private DialogOptions dialogOptions = new() { FullWidth = true };
 
+        /// <summary>
+        /// Just some random UI actions
+        /// </summary>
+        public string NameReverse { 
+            get {
+                if (!String.IsNullOrEmpty(newLastName))
+                {
+                    char[] array = newLastName.ToCharArray();
+                    Array.Reverse(array);
+                    return new string(array);
+                }
+                return "";
+            } set => nameReverse = value; }
+
         protected async Task DeletePerson(List<string> objectIds)
         {
             var client = GetParseClient();
@@ -38,6 +53,13 @@ namespace Daily_Blazor_App.Pages
 
             StateHasChanged();
             await OnInitializedAsync();
+
+            int count = objectIds.Count;
+
+            if (count > 0)
+            {
+                Snackbar.Add($"{count} Person(s) deleted", Severity.Success);
+            }
         }
 
         private async Task CreatePerson(string firstName, string lastName)
@@ -116,6 +138,8 @@ namespace Daily_Blazor_App.Pages
                 newLastName = string.Empty;
             }
             visible = false;
+
+            Snackbar.Add("Person saved", Severity.Success);
         }
     }
 }
