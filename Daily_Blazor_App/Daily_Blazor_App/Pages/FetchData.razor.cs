@@ -10,6 +10,7 @@ namespace Daily_Blazor_App.Pages
         private string newFirstName;
         private string newLastName;
         private string nameReverse;
+        private string searchText;
         private bool visible;
         private int rating;
         private HashSet<Person> selectedItems = new HashSet<Person>();
@@ -40,7 +41,34 @@ namespace Daily_Blazor_App.Pages
                 return "";
             } set => nameReverse = value; }
 
-        protected async Task DeletePerson(List<string> objectIds)
+        protected async Task SearchPerson()
+        {
+            // Code Samples
+            // https://github.com/parse-community/Parse-SDK-dotNET
+            var client = GetParseClient();
+
+            // Login is necessary from the SDK, even if public r/w access is active
+            // See: https://github.com/parse-community/Parse-SDK-dotNET/issues/337
+            // Create this user within the back4app backend
+            await client.LogInAsync("demo", "demo");
+
+            var query = client.GetQuery("Person").WhereContains("lastName", searchText).OrderByDescending("createdAt");
+            IEnumerable<ParseObject>? OnlinePersons = await query.FindAsync();
+
+            List<Person> Persons = new List<Person>();
+
+            foreach (ParseObject? onlinePerson in OnlinePersons)
+            {
+                Person p = new Person();
+                p.ObjectId = onlinePerson.ObjectId.ToString();
+                p.FirstName = onlinePerson["firstName"].ToString();
+                p.LastName = onlinePerson["lastName"].ToString();
+                Persons.Add(p);
+            }
+
+            forecasts = Persons.ToArray();
+        }
+            protected async Task DeletePerson(List<string> objectIds)
         {
             var client = GetParseClient();
             await client.LogInAsync("demo", "demo");
