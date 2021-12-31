@@ -12,12 +12,16 @@ namespace Daily_Blazor_App.Pages
         private string nameReverse;
         private string searchText;
         private bool visible;
+        private bool detailsVisbile;
         private int rating;
         private HashSet<Person> selectedItems = new HashSet<Person>();
         bool _forceRerender;
 
         private void OpenDialog() => visible = true;
         void Submit() => visible = false;
+
+        private void OpenDetailDialog() => detailsVisbile = true;
+        void SubmitDetail() => detailsVisbile = false;
 
         private ParseClient GetParseClient()
         {
@@ -26,6 +30,11 @@ namespace Daily_Blazor_App.Pages
         }
 
         private DialogOptions dialogOptions = new() { FullWidth = true };
+
+        private void RowClickEvent(TableRowClickEventArgs<Person> tableRowClickEventArgs)
+        {
+            OpenDetailDialog();
+        }
 
         /// <summary>
         /// Just some random UI actions

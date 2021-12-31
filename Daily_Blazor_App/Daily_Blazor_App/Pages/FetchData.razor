@@ -23,8 +23,8 @@ else
     <div>
         <p></p>
     </div>
-    <MudTable Items="@forecasts.Take(10)" @bind-SelectedItems="selectedItems" MultiSelection="true"  Hover="true" Breakpoint="Breakpoint.Sm" Striped="true" Bordered="true"
-          CustomHeader="true" CustomFooter="true" HeaderClass="table-head-bordered" FooterClass="table-foot-bordered">
+    <MudTable Items="@forecasts.Take(10)" @bind-SelectedItems="selectedItems" MultiSelection="true" OnRowClick="RowClickEvent"  Hover="true" Breakpoint="Breakpoint.Sm" Striped="true" Bordered="true"
+          CustomHeader="true" CustomFooter="true" HeaderClass="table-head-bordered" FooterClass="table-foot-bordered" T="Person">
     <HeaderContent>
         <MudTHeadRow IgnoreCheckbox="true" Class="header-centered">
             <MudTh colspan="6">People Info</MudTh>
@@ -110,7 +110,28 @@ else
         <MudButton Variant="Variant.Filled" Color="Color.Secondary" OnClick="Submit" Class="px-10">Close</MudButton>        
     </DialogActions>
 </MudDialog>
-    
+
+ <div class="d-flex">
+        <MudButton OnClick="OpenDetailDialog" Variant="Variant.Filled" Color="Color.Primary">
+            Show Detail
+        </MudButton>       
+    </div>
+        <MudDialog @bind-IsVisible="detailsVisbile" Options="dialogOptions">
+    <TitleContent>
+        <MudText Typo="Typo.h6">
+            <MudIcon Icon="@Icons.Material.Filled.Edit" Class="mr-3"/> Detail for Person (ToDo)
+        </MudText>
+    </TitleContent>
+    <DialogContent>
+        <MudTextField Label="First Name" @bind-Value="newFirstName" Variant="Variant.Text" ReadOnly/>
+        <MudTextField Label="Last Name" @bind-Value="newLastName" Variant="Variant.Text" ReadOnly/>        
+        <MudTextField Label="Name Reverse" @bind-Value="NameReverse" Variant="Variant.Text" ReadOnly/>  
+    </DialogContent>
+    <DialogActions>        
+        <MudButton Variant="Variant.Filled" Color="Color.Secondary" OnClick="SubmitDetail" Class="px-10">Close</MudButton>        
+    </DialogActions>
+</MudDialog>
+
 }
 
 
