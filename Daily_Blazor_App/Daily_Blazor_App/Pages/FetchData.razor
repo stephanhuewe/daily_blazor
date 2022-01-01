@@ -31,7 +31,7 @@ else
         </MudTHeadRow>
         <MudTHeadRow Class="header-centered">
             <MudTh colspan="2">Basic</MudTh>
-            <MudTh colspan="3">Additional Data</MudTh> 
+            <MudTh colspan="3">Additional Data</MudTh>
         </MudTHeadRow>
         <MudTHeadRow IsCheckable="true">
             <MudTh>ObjectId</MudTh> 
@@ -123,8 +123,8 @@ else
         </MudText>
     </TitleContent>
     <DialogContent>
-        <MudTextField Label="First Name" @bind-Value="newFirstName" Variant="Variant.Text" ReadOnly/>
-        <MudTextField Label="Last Name" @bind-Value="newLastName" Variant="Variant.Text" ReadOnly/>        
+        <MudTextField Label="First Name" @bind-Value="selectedItems.FirstOrDefault().FirstName" Variant="Variant.Text" ReadOnly/>
+        <MudTextField Label="Last Name" @bind-Value="selectedItems.FirstOrDefault().LastName" Variant="Variant.Text" ReadOnly/>        
         <MudTextField Label="Name Reverse" @bind-Value="NameReverse" Variant="Variant.Text" ReadOnly/>  
     </DialogContent>
     <DialogActions>        
