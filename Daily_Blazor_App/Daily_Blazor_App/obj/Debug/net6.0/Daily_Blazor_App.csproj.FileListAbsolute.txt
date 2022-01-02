@@ -27,3 +27,4 @@ C:\Users\sh\Source\Repos\daily_blazor\Daily_Blazor_App\Daily_Blazor_App\obj\Debu
 C:\Users\sh\Source\Repos\daily_blazor\Daily_Blazor_App\Daily_Blazor_App\obj\Debug\net6.0\ref\Daily_Blazor_App.dll
 C:\Users\sh\Source\Repos\daily_blazor\Daily_Blazor_App\Daily_Blazor_App\obj\Debug\net6.0\Daily_Blazor_App.pdb
 C:\Users\sh\Source\Repos\daily_blazor\Daily_Blazor_App\Daily_Blazor_App\obj\Debug\net6.0\Daily_Blazor_App.genruntimeconfig.cache
+C:\Users\sh\Source\Repos\daily_blazor\Daily_Blazor_App\Daily_Blazor_App\bin\Debug\net6.0\libman.json

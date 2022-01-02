@@ -1,5 +1,8 @@
 ﻿@page "/fetchdata"
+@using Microsoft.JSInterop;
 @using Daily_Blazor_App.Data
+
+@inject IJSRuntime JS
 @inject WeatherForecastService ForecastService
 @inject NavigationManager NavigationManager
 @inject ISnackbar Snackbar
@@ -128,6 +131,7 @@ else
         <MudTextField Label="Name Reverse" @bind-Value="NameReverse" Variant="Variant.Text" ReadOnly/>  
     </DialogContent>
     <DialogActions>        
+        <MudButton Variant="Variant.Filled" Color="Color.Secondary" OnClick="Print" Class="px-10">Print</MudButton>        
         <MudButton Variant="Variant.Filled" Color="Color.Secondary" OnClick="SubmitDetail" Class="px-10">Close</MudButton>        
     </DialogActions>
 </MudDialog>

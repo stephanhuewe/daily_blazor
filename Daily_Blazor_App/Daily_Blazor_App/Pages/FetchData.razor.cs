@@ -1,4 +1,5 @@
 ﻿using Daily_Blazor_App.Data;
+using Microsoft.JSInterop;
 using MudBlazor;
 using Parse;
 
@@ -177,6 +178,11 @@ namespace Daily_Blazor_App.Pages
             visible = false;
 
             Snackbar.Add("Person saved", Severity.Success);
+        }
+
+        private void Print()
+        {
+            JS.InvokeVoidAsync("Print");
         }
     }
 }
