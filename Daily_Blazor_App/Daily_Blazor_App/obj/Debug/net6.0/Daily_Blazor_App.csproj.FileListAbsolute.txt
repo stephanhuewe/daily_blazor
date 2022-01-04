@@ -28,3 +28,10 @@ C:\Users\sh\Source\Repos\daily_blazor\Daily_Blazor_App\Daily_Blazor_App\obj\Debu
 C:\Users\sh\Source\Repos\daily_blazor\Daily_Blazor_App\Daily_Blazor_App\obj\Debug\net6.0\Daily_Blazor_App.pdb
 C:\Users\sh\Source\Repos\daily_blazor\Daily_Blazor_App\Daily_Blazor_App\obj\Debug\net6.0\Daily_Blazor_App.genruntimeconfig.cache
 C:\Users\sh\Source\Repos\daily_blazor\Daily_Blazor_App\Daily_Blazor_App\bin\Debug\net6.0\libman.json
+C:\Users\sh\Source\Repos\daily_blazor\Daily_Blazor_App\Daily_Blazor_App\bin\Debug\net6.0\iTextSharp.LGPLv2.Core.dll
+C:\Users\sh\Source\Repos\daily_blazor\Daily_Blazor_App\Daily_Blazor_App\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\sh\Source\Repos\daily_blazor\Daily_Blazor_App\Daily_Blazor_App\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\sh\Source\Repos\daily_blazor\Daily_Blazor_App\Daily_Blazor_App\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\sh\Source\Repos\daily_blazor\Daily_Blazor_App\Daily_Blazor_App\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\sh\Source\Repos\daily_blazor\Daily_Blazor_App\Daily_Blazor_App\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\sh\Source\Repos\daily_blazor\Daily_Blazor_App\Daily_Blazor_App\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll

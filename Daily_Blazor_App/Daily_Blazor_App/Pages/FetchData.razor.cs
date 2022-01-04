@@ -184,5 +184,11 @@ namespace Daily_Blazor_App.Pages
         {
             JS.InvokeVoidAsync("Print");
         }
+
+        private void ClickCreateFile(int pagetype, string filename)
+        {
+            var pdf = new PDF.Report();
+            pdf.Generate(JS, pagetype, filename);
+        }
     }
 }

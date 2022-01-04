@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xyP4c9YKFmmY0+CxFh9qC8zhugvfiWhkDnYfD4OK55o=",
+  "Hash": "g4NH/AmQiZHUW11Fb+8yTCBB+j2QZMSanY2uhgpTXW0=",
   "Source": "Daily_Blazor_App",
   "BasePath": "_content/Daily_Blazor_App",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\myCustomJS.js"
+    },
+    {
+      "Identity": "C:\\Users\\sh\\Source\\Repos\\daily_blazor\\Daily_Blazor_App\\Daily_Blazor_App\\wwwroot\\js\\pdfAction.js",
+      "SourceId": "Daily_Blazor_App",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sh\\Source\\Repos\\daily_blazor\\Daily_Blazor_App\\Daily_Blazor_App\\wwwroot\\",
+      "BasePath": "_content/Daily_Blazor_App",
+      "RelativePath": "js/pdfAction.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\pdfAction.js"
     }
   ]
 }

@@ -131,7 +131,8 @@ else
         <MudTextField Label="Name Reverse" @bind-Value="NameReverse" Variant="Variant.Text" ReadOnly/>  
     </DialogContent>
     <DialogActions>        
-        <MudButton Variant="Variant.Filled" Color="Color.Secondary" OnClick="Print" Class="px-10">Print</MudButton>        
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="Print" Class="px-10">Print</MudButton>        
+        <MudButton Variant="Variant.Filled" Color="Color.Tertiary" @onclick="@(p => ClickCreateFile(1, "text.pdf"))" Class="px-10">Create PDF</MudButton>        
         <MudButton Variant="Variant.Filled" Color="Color.Secondary" OnClick="SubmitDetail" Class="px-10">Close</MudButton>        
     </DialogActions>
 </MudDialog>
