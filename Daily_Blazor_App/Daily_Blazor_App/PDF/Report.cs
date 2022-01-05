@@ -5,15 +5,18 @@ using Microsoft.JSInterop;
 
 namespace Daily_Blazor_App.PDF
 {
+    using Daily_Blazor_App.Data;
     using Helpers;
 
     public class Report
     {
         private int _pagenumber;
+        private Person _person;
 
-        public void Generate(IJSRuntime js, int pagenumber, string filename = "report.pdf")
+        public void Generate(IJSRuntime js, Person person, int pagenumber, string filename = "report.pdf")
         {
             _pagenumber = pagenumber;
+            _person = person;
 
             js.InvokeVoidAsync("jsSaveAsFile",
                                 filename,
@@ -69,7 +72,7 @@ namespace Daily_Blazor_App.PDF
 
             //HEADER and FOOTER
             var fontStyle = FontFactory.GetFont("Arial", 16, BaseColor.White);
-            var labelHeader = new Chunk("Header Blazor PDF", fontStyle);
+            var labelHeader = new Chunk($"Header Blazor PDF for {_person.LastName}", fontStyle);
             HeaderFooter header = new HeaderFooter(new Phrase(labelHeader), false)
             {
                 BackgroundColor = new BaseColor(133, 76, 199),

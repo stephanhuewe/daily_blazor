@@ -16,6 +16,7 @@ namespace Daily_Blazor_App.Pages
         private bool detailsVisbile;
         private int rating;
         private HashSet<Person> selectedItems = new HashSet<Person>();
+        private Person currentPerson;
         bool _forceRerender;
 
         private void OpenDialog() => visible = true;
@@ -188,7 +189,7 @@ namespace Daily_Blazor_App.Pages
         private void ClickCreateFile(int pagetype, string filename)
         {
             var pdf = new PDF.Report();
-            pdf.Generate(JS, pagetype, filename);
+            pdf.Generate(JS, selectedItems.FirstOrDefault(), pagetype, filename);
         }
     }
 }
