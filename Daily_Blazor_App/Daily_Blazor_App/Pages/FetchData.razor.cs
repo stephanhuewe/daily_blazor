@@ -1,4 +1,5 @@
 ﻿using Daily_Blazor_App.Data;
+using Daily_Blazor_App_Logic;
 using Microsoft.JSInterop;
 using MudBlazor;
 using Parse;
@@ -25,11 +26,7 @@ namespace Daily_Blazor_App.Pages
         private void OpenDetailDialog() => detailsVisbile = true;
         void SubmitDetail() => detailsVisbile = false;
 
-        private ParseClient GetParseClient()
-        {
-            ParseClient client = new ParseClient(Daily_Blazor_App_Logic.Consts.APP_ID, Daily_Blazor_App_Logic.Consts.APP_URI, Daily_Blazor_App_Logic.Consts.NETKEY);
-            return client;
-        }
+       
 
         private DialogOptions dialogOptions = new() { FullWidth = true };
 
@@ -56,7 +53,8 @@ namespace Daily_Blazor_App.Pages
         {
             // Code Samples
             // https://github.com/parse-community/Parse-SDK-dotNET
-            var client = GetParseClient();
+            
+            var client = Helper.GetParseClient();
 
             // Login is necessary from the SDK, even if public r/w access is active
             // See: https://github.com/parse-community/Parse-SDK-dotNET/issues/337
@@ -81,7 +79,7 @@ namespace Daily_Blazor_App.Pages
         }
             protected async Task DeletePerson(List<string> objectIds)
         {
-            var client = GetParseClient();
+            var client = Helper.GetParseClient();
             await client.LogInAsync("demo", "demo");
             
             foreach (var objectId in objectIds)
@@ -103,7 +101,7 @@ namespace Daily_Blazor_App.Pages
 
         private async Task CreatePerson(string firstName, string lastName)
         {
-            var client = GetParseClient();
+            var client = Helper.GetParseClient();
 
             // Login is necessary from the SDK, even if public r/w access is active
             // See: https://github.com/parse-community/Parse-SDK-dotNET/issues/337
@@ -144,7 +142,7 @@ namespace Daily_Blazor_App.Pages
         {
             // Code Samples
             // https://github.com/parse-community/Parse-SDK-dotNET
-            var client = GetParseClient();
+            var client = Helper.GetParseClient();
 
             // Login is necessary from the SDK, even if public r/w access is active
             // See: https://github.com/parse-community/Parse-SDK-dotNET/issues/337
