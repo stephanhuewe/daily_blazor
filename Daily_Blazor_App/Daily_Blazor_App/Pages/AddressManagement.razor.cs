@@ -17,6 +17,19 @@ namespace Daily_Blazor_App.Pages
         private int rating;
         private HashSet<Person> selectedItems = new HashSet<Person>();
         object selectedValue;
+        public Person? currentPerson
+        {
+            get
+            {
+                if (selectedValue != null)
+                {
+                    return (Person)selectedValue;
+                }
+                return null;
+            }
+            set { selectedValue = value; }            
+        }
+
         MudListItem selectedItem;
         bool _forceRerender;
 

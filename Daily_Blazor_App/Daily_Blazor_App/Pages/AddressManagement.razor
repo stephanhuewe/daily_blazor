@@ -15,7 +15,7 @@ else
 {
                      @foreach (var person in people)
             {
-                <MudListItem Text="@person.FullName" Value="@person.ObjectId" />
+                <MudListItem Text="@person.FullName" Value="@person" />
             }
 }
             </MudList>
@@ -30,7 +30,16 @@ else
              <MudChip Color="Color.Secondary">
                 @(selectedItem?.Text ?? "Nothing selected") (@(selectedValue?.ToString() ?? "0"))
             </MudChip>
-            @*<MudTextField Label="First Name" Text="@selectedItem?.Text" Variant="Variant.Text"/>*@
+            @if (currentPerson != null)
+            {
+                <MudTextField Label="First Name" @bind-Value="currentPerson.FirstName" Variant="Variant.Text" ReadOnly/>
+            }
+            else
+            {
+                <h1>hello</h1>
+            }
+            
+            
 
         @*<MudTextField Label="Name Reverse" @bind-Value="NameReverse" Variant="Variant.Text" ReadOnly/>  *@
 
