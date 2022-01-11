@@ -35,6 +35,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/sh/Source/Repos/daily_blazor/Daily_Blazor_App/Daily_Blazor_App/Pages/NavigationAlternative.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2aWdhdGlvbkFsdGVybmF0aXZlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/sh/Source/Repos/daily_blazor/Daily_Blazor_App/Daily_Blazor_App/Pages/Refresh.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVmcmVzaC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
