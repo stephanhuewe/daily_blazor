@@ -30,14 +30,27 @@ else
         <MudPaper Height="400px" Width="100%" Square="true" Class="mud-theme-">
             Some Detail
              <MudChip Color="Color.Secondary">
-                @(selectedItem?.Text ?? "Nothing selected") (@(selectedValue?.ToString() ?? "0"))
+                @(selectedItem?.Text ?? "Nothing selected")
             </MudChip>
             @if (currentPerson != null)
             {
-                <MudChip Color="Color.Secondary">
-                <MudTextField Label="First Name" @bind-Value="currentPerson.FirstName" Variant="Variant.Text" ReadOnly/>
-                <MudTextField Label="Last Name" @bind-Value="currentPerson.LastName" Variant="Variant.Text" ReadOnly/>
-                </MudChip>
+                <MudTabs Elevation="2" Rounded="true" ApplyEffectsToContainer="true" PanelClass="pa-6">
+    <MudTabPanel Text="Person">
+        <MudText><MudTextField Label="First Name" @bind-Value="currentPerson.FirstName" Variant="Variant.Text" ReadOnly/>
+                <MudTextField Label="Last Name" @bind-Value="currentPerson.LastName" Variant="Variant.Text" ReadOnly/></MudText>
+    </MudTabPanel>
+    <MudTabPanel Text="Address">
+        <MudText>Content Two</MudText>
+    </MudTabPanel>
+    <MudTabPanel Text="Tab Three">
+        <MudText>Content Three</MudText>
+    </MudTabPanel>
+    <MudTabPanel Text="Tab Disabled" Disabled="true">
+        <MudText>Content Disabled</MudText>
+    </MudTabPanel>
+</MudTabs>
+                
+
             }
             else
             {
