@@ -5,66 +5,69 @@
 
 <MudPaper Height="800px" Width="100%">
     <div style="display:block; width:100%;">
-  <div style="width:50%; float: left; display: inline-block;">
-        <MudContainer Fixed=true>
-            <MudPaper Height="400px" Width="100%" Square="true" Class="mud-theme-primary">
-                 <MudList Clickable="true" @bind-SelectedItem="selectedItem" @bind-SelectedValue="selectedValue">
-                     @if (people == null)
-{
-    <h3>Loading</h3>
-}
-else
-{
-                     @foreach (var person in people)
-            {
-                <MudListItem Text="@person.FullName" Value="@person" />
-            }
-}
-            </MudList>
+        <div style="width:50%; float: left; display: inline-block;">
+            <MudContainer Fixed=true>
+                <MudPaper Height="400px" Width="100%" Square="true" Class="mud-theme-primary">
+                    <MudList Clickable="true" @bind-SelectedItem="selectedItem" @bind-SelectedValue="selectedValue">
+                        @if (people == null)
+                        {
+                            <h3>Loading</h3>
+                        }
+                        else
+                        {
+                            @foreach (var person in people)
+                            {
+                                <MudListItem Text="@person.FullName" Value="@person" />
+                            }
+                        }
+                    </MudList>
 
-            </MudPaper>
-        </MudContainer>
+                </MudPaper>
+            </MudContainer>
+        </div>
+        <div style="width:50%; float: left; display: inline-block;">
+            <MudContainer Fixed=true>
+                <MudPaper Height="400px" Width="100%" Square="true" Class="mud-theme-">
+                    Some Detail
+                    <MudChip Color="Color.Secondary">
+                        @(selectedItem?.Text ?? "Nothing selected")
+                    </MudChip>
+                    @if (currentPerson != null)
+                    {
+                        <MudTabs Elevation="2" Rounded="true" ApplyEffectsToContainer="true" PanelClass="pa-6">
+                            <MudTabPanel Text="Person">
+                                <MudText>
+                                    <MudTextField Label="First Name" @bind-Value="currentPerson.FirstName" Variant="Variant.Text" ReadOnly />
+                                    <MudTextField Label="Last Name" @bind-Value="currentPerson.LastName" Variant="Variant.Text" ReadOnly />
+                                </MudText>
+                            </MudTabPanel>
+                            <MudTabPanel Text="Address">
+                                <MudText>Content Two</MudText>
+                            </MudTabPanel>
+                            <MudTabPanel Text="Tab Three">
+                                <MudText>Content Three</MudText>
+                            </MudTabPanel>
+                            <MudTabPanel Text="Tab Disabled" Disabled="true">
+                                <MudText>Content Disabled</MudText>
+                            </MudTabPanel>
+                        </MudTabs>
+
+
+                    }
+                    else
+                    {
+                        <h1>hello</h1>
+                    }
+
+
+
+                    @*<MudTextField Label="Name Reverse" @bind-Value="NameReverse" Variant="Variant.Text" ReadOnly/>  *@
+
+                </MudPaper>
+            </MudContainer>
+        </div>
     </div>
-  <div style="width:50%; float: left; display: inline-block;">
-      <MudContainer Fixed=true>
-        <MudPaper Height="400px" Width="100%" Square="true" Class="mud-theme-">
-            Some Detail
-             <MudChip Color="Color.Secondary">
-                @(selectedItem?.Text ?? "Nothing selected")
-            </MudChip>
-            @if (currentPerson != null)
-            {
-                <MudTabs Elevation="2" Rounded="true" ApplyEffectsToContainer="true" PanelClass="pa-6">
-    <MudTabPanel Text="Person">
-        <MudText><MudTextField Label="First Name" @bind-Value="currentPerson.FirstName" Variant="Variant.Text" ReadOnly/>
-                <MudTextField Label="Last Name" @bind-Value="currentPerson.LastName" Variant="Variant.Text" ReadOnly/></MudText>
-    </MudTabPanel>
-    <MudTabPanel Text="Address">
-        <MudText>Content Two</MudText>
-    </MudTabPanel>
-    <MudTabPanel Text="Tab Three">
-        <MudText>Content Three</MudText>
-    </MudTabPanel>
-    <MudTabPanel Text="Tab Disabled" Disabled="true">
-        <MudText>Content Disabled</MudText>
-    </MudTabPanel>
-</MudTabs>
-                
 
-            }
-            else
-            {
-                <h1>hello</h1>
-            }
-            
-            
-
-        @*<MudTextField Label="Name Reverse" @bind-Value="NameReverse" Variant="Variant.Text" ReadOnly/>  *@
-
-        </MudPaper>
-    </MudContainer></div>
-</div>
-    
     <MudDivider Vertical="true" FlexItem="true" />
 
 
