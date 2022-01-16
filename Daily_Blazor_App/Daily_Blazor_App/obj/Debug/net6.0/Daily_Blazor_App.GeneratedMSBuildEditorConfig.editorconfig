@@ -43,6 +43,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVmcmVzaC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/sh/Source/Repos/daily_blazor/Daily_Blazor_App/Daily_Blazor_App/Pages/SimpleFormTable.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2ltcGxlRm9ybVRhYmxlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/sh/Source/Repos/daily_blazor/Daily_Blazor_App/Daily_Blazor_App/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
