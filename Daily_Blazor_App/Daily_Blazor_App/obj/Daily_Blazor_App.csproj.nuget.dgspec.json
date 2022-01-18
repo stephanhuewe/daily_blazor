@@ -48,6 +48,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.Extensions.Localization": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
             "MudBlazor": {
               "target": "Package",
               "version": "[6.0.2, )"

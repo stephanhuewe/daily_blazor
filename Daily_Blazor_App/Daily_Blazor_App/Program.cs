@@ -2,8 +2,7 @@ using Daily_Blazor_App.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using MudBlazor.Services;
-
-
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +11,21 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddMudServices();
+
+builder.Services.AddLocalization();
+
+var supportedCultures = new List<CultureInfo>
+{
+   new CultureInfo("de"),
+   new CultureInfo("en")
+}; builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    options.DefaultRequestCulture =
+       new Microsoft.AspNetCore.Localization.RequestCulture("en");
+    options.SupportedUICultures = supportedCultures;
+});
+
+
 
 // Not working yet
 //string APP_ID = builder.Configuration["Back4App:APP_ID"];
@@ -26,6 +40,8 @@ builder.Services.AddMudServices();
 //builder.Services.AddSingleton<Back4AppConfig>(Config);
 
 var app = builder.Build();
+
+app.UseRequestLocalization();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
