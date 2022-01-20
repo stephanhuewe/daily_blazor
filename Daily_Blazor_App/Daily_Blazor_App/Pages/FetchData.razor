@@ -127,7 +127,13 @@ else
     </TitleContent>
     <DialogContent>
         <MudTextField Label="First Name" @bind-Value="selectedItems.FirstOrDefault().FirstName" Variant="Variant.Text" ReadOnly/>
-        <MudTextField Label="Last Name" @bind-Value="selectedItems.FirstOrDefault().LastName" Variant="Variant.Text" ReadOnly/>        
+        <MudTextField Label="Last Name" @bind-Value="selectedItems.FirstOrDefault().LastName" Variant="Variant.Text" ReadOnly/>      
+        <MudSelect @bind-Value="enumValue" Label="Select drink" HelperText="Enum" OpenIcon="@Icons.Material.Filled.LocalDrink" AdornmentColor="Color.Secondary">
+    @foreach (Drink item in Enum.GetValues(typeof(Drink)))
+    {
+        <MudSelectItem Value="@item">@item</MudSelectItem>
+    }
+</MudSelect>
     </DialogContent>
     <DialogActions>        
         <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="Print" Class="px-10">Print</MudButton>        
@@ -139,6 +145,9 @@ else
 
 @code
 {
+        private Drink enumValue { get; set; }
+    public enum Drink { Tee, SparklingWater, SoftDrink, Cider, Beer, Wine, Moonshine }
+        
     [Inject] private IDialogService DialogService { get; set; }
 
     string state = "Message box hasn't been opened yet";
