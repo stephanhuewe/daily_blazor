@@ -17,152 +17,158 @@
 }
 else
 {
-     <div class="d-flex">
-        <MudTextField Label="Search" @bind-Value="searchText" Variant="Variant.Text"/>
+    <div class="d-flex">
+        <MudTextField Label="Search" @bind-Value="searchText" Variant="Variant.Text" />
         <MudButton OnClick="SearchPerson" Variant="Variant.Filled" Color="Color.Info">
             Search
-        </MudButton>       
+        </MudButton>
     </div>
     <div>
         <p></p>
     </div>
-    <MudTable Items="@forecasts.Take(10)" @bind-SelectedItems="selectedItems" MultiSelection="true" OnRowClick="RowClickEvent"  Hover="true" Breakpoint="Breakpoint.Sm" Striped="true" Bordered="true"
+    <MudTable Items="@forecasts.Take(10)" @bind-SelectedItems="selectedItems" MultiSelection="true" OnRowClick="RowClickEvent" Hover="true" Breakpoint="Breakpoint.Sm" Striped="true" Bordered="true"
           CustomHeader="true" CustomFooter="true" HeaderClass="table-head-bordered" FooterClass="table-foot-bordered" T="Person">
-    <HeaderContent>
-        <MudTHeadRow IgnoreCheckbox="true" Class="header-centered">
-            <MudTh colspan="6">People Info</MudTh>
-        </MudTHeadRow>
-        <MudTHeadRow Class="header-centered">
-            <MudTh colspan="2">Basic</MudTh>
-            <MudTh colspan="3">Additional Data</MudTh>
-        </MudTHeadRow>
-        <MudTHeadRow IsCheckable="true">
-            <MudTh>ObjectId</MudTh> 
-            <MudTh>First Name</MudTh> 
-            <MudTh>Last Name</MudTh>
-            <MudTh>Hobby</MudTh>
-            <MudTh>Position</MudTh>
-            <MudTh>Telephone</MudTh>
-        </MudTHeadRow>
-    </HeaderContent>
-    <RowTemplate>
-        <MudTd DataLabel="Nr">@context.ObjectId</MudTd>
-        <MudTd DataLabel="FirstName">@context.FirstName</MudTd>
-        <MudTd DataLabel="LastName">@context.LastName</MudTd>
-        <MudTd DataLabel="Hobby">@context.LastName</MudTd>        
-        @*<MudTd DataLabel="Position" HideSmall="_hidePosition">@context.Position</MudTd>
-        <MudTd DataLabel="Molar mass">@context.Molar</MudTd>*@
-    </RowTemplate>
-    <FooterContent>
-        @*<MudTFootRow Class="bold-text">
-            <MudTd>Nr</MudTd>
-            <MudTd>Sign</MudTd>
-            <MudTd>Name</MudTd>
-            <MudTd>Position</MudTd>
-            <MudTd>Molar mass</MudTd>
-        </MudTFootRow>
-        <MudTFootRow IsCheckable="true">
-            <MudTd colspan="5">Selected: @selectedItems.Count()</MudTd>
-        </MudTFootRow>*@
-    </FooterContent>    
-</MudTable>
-<MudButton Variant="Variant.Filled" Color="Color.Secondary" @onclick="() => DeletePerson(selectedItems.Select(x => x.ObjectId).ToList())">Delete Selected Person</MudButton >
-
-    @*<MudTable Items="forecasts" Hover="true" SortLabel="Sort By" Elevation="0">
         <HeaderContent>
+            <MudTHeadRow IgnoreCheckbox="true" Class="header-centered">
+                <MudTh colspan="6">People Info</MudTh>
+            </MudTHeadRow>
+            <MudTHeadRow Class="header-centered">
+                <MudTh colspan="2">Basic</MudTh>
+                <MudTh colspan="3">Additional Data</MudTh>
+            </MudTHeadRow>
             <MudTHeadRow IsCheckable="true">
-                <MudTh><MudTableSortLabel InitialDirection="SortDirection.Ascending" SortBy="new Func<WeatherForecast, object>(x=>x.Date)">FirstName</MudTableSortLabel></MudTh>
-                <MudTh><MudTableSortLabel SortBy="new Func<WeatherForecast, object>(x=>x.TemperatureC)">LastName</MudTableSortLabel></MudTh>
-                <!-- <MudTh><MudTableSortLabel SortBy="new Func<WeatherForecast, object>(x=>x.TemperatureF)">Temp. (F)</MudTableSortLabel></MudTh> -->
-                <!-- <MudTh><MudTableSortLabel SortBy="new Func<WeatherForecast, object>(x=>x.Summary)">Summary</MudTableSortLabel></MudTh> -->
+                <MudTh>ObjectId</MudTh>
+                <MudTh>First Name</MudTh>
+                <MudTh>Last Name</MudTh>
+                <MudTh>Hobby</MudTh>
+                <MudTh>Position</MudTh>
+                <MudTh>Telephone</MudTh>
             </MudTHeadRow>
         </HeaderContent>
         <RowTemplate>
+            <MudTd DataLabel="Nr">@context.ObjectId</MudTd>
             <MudTd DataLabel="FirstName">@context.FirstName</MudTd>
             <MudTd DataLabel="LastName">@context.LastName</MudTd>
-            
-            <!-- <MudTd DataLabel="Temp. (F)">@context.FirstName</MudTd> -->
-            <!-- <MudTd DataLabel="Summary">@context.FirstName</MudTd> -->
+            <MudTd DataLabel="Hobby">@context.LastName</MudTd>
+            @*<MudTd DataLabel="Position" HideSmall="_hidePosition">@context.Position</MudTd>
+                <MudTd DataLabel="Molar mass">@context.Molar</MudTd>*@
         </RowTemplate>
-        <PagerContent> 
-            <MudTablePager PageSizeOptions="new int[]{50, 100}" />
-        </PagerContent>
-    </MudTable>*@
+        <FooterContent>
+            @*<MudTFootRow Class="bold-text">
+                <MudTd>Nr</MudTd>
+                <MudTd>Sign</MudTd>
+                <MudTd>Name</MudTd>
+                <MudTd>Position</MudTd>
+                <MudTd>Molar mass</MudTd>
+                </MudTFootRow>
+                <MudTFootRow IsCheckable="true">
+                <MudTd colspan="5">Selected: @selectedItems.Count()</MudTd>
+                </MudTFootRow>*@
+        </FooterContent>
 
-   
+    </MudTable>
+    <MudButton Variant="Variant.Filled" Color="Color.Secondary" @onclick="() => DeletePerson(selectedItems.Select(x => x.ObjectId).ToList())">Delete Selected Person</MudButton>
+
+    @*<MudTable Items="forecasts" Hover="true" SortLabel="Sort By" Elevation="0">
+        <HeaderContent>
+        <MudTHeadRow IsCheckable="true">
+        <MudTh><MudTableSortLabel InitialDirection="SortDirection.Ascending" SortBy="new Func<WeatherForecast, object>(x=>x.Date)">FirstName</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<WeatherForecast, object>(x=>x.TemperatureC)">LastName</MudTableSortLabel></MudTh>
+        <!-- <MudTh><MudTableSortLabel SortBy="new Func<WeatherForecast, object>(x=>x.TemperatureF)">Temp. (F)</MudTableSortLabel></MudTh> -->
+        <!-- <MudTh><MudTableSortLabel SortBy="new Func<WeatherForecast, object>(x=>x.Summary)">Summary</MudTableSortLabel></MudTh> -->
+        </MudTHeadRow>
+        </HeaderContent>
+        <RowTemplate>
+        <MudTd DataLabel="FirstName">@context.FirstName</MudTd>
+        <MudTd DataLabel="LastName">@context.LastName</MudTd>
+
+        <!-- <MudTd DataLabel="Temp. (F)">@context.FirstName</MudTd> -->
+        <!-- <MudTd DataLabel="Summary">@context.FirstName</MudTd> -->
+        </RowTemplate>
+        <PagerContent>
+        <MudTablePager PageSizeOptions="new int[]{50, 100}" />
+        </PagerContent>
+        </MudTable>*@
+
+
 
 
     <div class="d-flex">
         <MudButton OnClick="OpenDialog" Variant="Variant.Filled" Color="Color.Primary">
             Add New Person
-        </MudButton>       
+        </MudButton>
     </div>
-        <MudDialog @bind-IsVisible="visible" Options="dialogOptions">
-    <TitleContent>
-        <MudText Typo="Typo.h6">
-            <MudIcon Icon="@Icons.Material.Filled.Edit" Class="mr-3"/> Edit rating
-        </MudText>
-    </TitleContent>
-    <DialogContent>
-        <MudTextField Label="First Name" @bind-Value="newFirstName" Variant="Variant.Text"/>
-        <MudTextField Label="Last Name" @bind-Value="newLastName" Variant="Variant.Text" />        
-        <MudTextField Label="Name Reverse" @bind-Value="NameReverse" Variant="Variant.Text" ReadOnly/>  
+    <MudDialog @bind-IsVisible="visible" Options="dialogOptions">
+        <TitleContent>
+            <MudText Typo="Typo.h6">
+                <MudIcon Icon="@Icons.Material.Filled.Edit" Class="mr-3" /> Edit rating
+            </MudText>
+        </TitleContent>
+        <DialogContent>
+            <MudTextField Label="First Name" @bind-Value="newFirstName" Variant="Variant.Text" />
+            <MudTextField Label="Last Name" @bind-Value="newLastName" Variant="Variant.Text" />
+
+            <MudTextField Label="Name Reverse" @bind-Value="NameReverse" Variant="Variant.Text" ReadOnly />
+            <MudSelect @bind-Value="enumValue" Label="Select drink" HelperText="Enum" OpenIcon="@Icons.Material.Filled.LocalDrink" AdornmentColor="Color.Secondary">
+                @foreach (Drink item in Enum.GetValues(typeof(Drink)))
+                {
+                <MudSelectItem Value="@item">@item</MudSelectItem>
+                }
+        </MudSelect>
     </DialogContent>
     <DialogActions>
-        <MudButton Variant="Variant.Filled" Color="Color.Primary"  @onclick="AddPerson">Add & Close</MudButton >
-        <MudButton Variant="Variant.Filled" Color="Color.Secondary" OnClick="Submit" Class="px-10">Close</MudButton>        
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" @onclick="AddPerson">Add & Close</MudButton>
+        <MudButton Variant="Variant.Filled" Color="Color.Secondary" OnClick="Submit" Class="px-10">Close</MudButton>
     </DialogActions>
 </MudDialog>
 
- <div class="d-flex">
+    <div class="d-flex">
         <MudButton OnClick="OpenDetailDialog" Variant="Variant.Filled" Color="Color.Primary">
             Show Detail
-        </MudButton>       
+        </MudButton>
     </div>
-        <MudDialog @bind-IsVisible="detailsVisbile" Options="dialogOptions">
-    <TitleContent>
-        <MudText Typo="Typo.h6">
-            <MudIcon Icon="@Icons.Material.Filled.Edit" Class="mr-3"/> Detail for Person (ToDo)
-        </MudText>
-    </TitleContent>
-    <DialogContent>
-        <MudTextField Label="First Name" @bind-Value="selectedItems.FirstOrDefault().FirstName" Variant="Variant.Text" ReadOnly/>
-        <MudTextField Label="Last Name" @bind-Value="selectedItems.FirstOrDefault().LastName" Variant="Variant.Text" ReadOnly/>      
-        <MudSelect @bind-Value="enumValue" Label="Select drink" HelperText="Enum" OpenIcon="@Icons.Material.Filled.LocalDrink" AdornmentColor="Color.Secondary">
-    @foreach (Drink item in Enum.GetValues(typeof(Drink)))
-    {
-        <MudSelectItem Value="@item">@item</MudSelectItem>
-    }
-</MudSelect>
-    </DialogContent>
-    <DialogActions>        
-        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="Print" Class="px-10">Print</MudButton>        
-        <MudButton Variant="Variant.Filled" Color="Color.Tertiary" @onclick="@(p => ClickCreateFile(1, "text.pdf"))" Class="px-10">Create PDF</MudButton>        
-        <MudButton Variant="Variant.Filled" Color="Color.Secondary" OnClick="SubmitDetail" Class="px-10">Close</MudButton>        
-        <MudButton Variant="Variant.Filled" Color="Color.Error" OnClick="OnButtonClicked" >Delete</MudButton>
+    <MudDialog @bind-IsVisible="detailsVisbile" Options="dialogOptions">
+        <TitleContent>
+            <MudText Typo="Typo.h6">
+                <MudIcon Icon="@Icons.Material.Filled.Edit" Class="mr-3" /> Detail for Person (ToDo)
+            </MudText>
+        </TitleContent>
+        <DialogContent>
+            <MudTextField Label="First Name" @bind-Value="selectedItems.FirstOrDefault().FirstName" Variant="Variant.Text" ReadOnly />
+            <MudTextField Label="Last Name" @bind-Value="selectedItems.FirstOrDefault().LastName" Variant="Variant.Text" ReadOnly />
 
-<MudChip>@state</MudChip>
 
-@code
-{
+
+        </DialogContent>
+        <DialogActions>
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="Print" Class="px-10">Print</MudButton>
+            <MudButton Variant="Variant.Filled" Color="Color.Tertiary" @onclick="@(p => ClickCreateFile(1, "text.pdf"))" Class="px-10">Create PDF</MudButton>
+            <MudButton Variant="Variant.Filled" Color="Color.Secondary" OnClick="SubmitDetail" Class="px-10">Close</MudButton>
+            <MudButton Variant="Variant.Filled" Color="Color.Error" OnClick="OnButtonClicked">Delete</MudButton>
+
+            <MudChip>@state</MudChip>
+
+            @code
+            {
         private Drink enumValue { get; set; }
-    public enum Drink { Tee, SparklingWater, SoftDrink, Cider, Beer, Wine, Moonshine }
-        
-    [Inject] private IDialogService DialogService { get; set; }
-
-    string state = "Message box hasn't been opened yet";
+        public enum Drink { Tee, SparklingWater, SoftDrink, Cider, Beer, Wine, Moonshine }
 
 
-    private async void OnButtonClicked()
-    {
-        bool? result = await DialogService.ShowMessageBox(
-            "Warning", 
-            "Deleting can not be undone!", 
-            yesText:"Delete!", cancelText:"Cancel");
-        state= result==null ? "Cancelled" : "Deleted!";
-        StateHasChanged();
-    }
-}
+        [Inject] private IDialogService DialogService { get; set; }
+
+        string state = "Message box hasn't been opened yet";
+
+
+        private async void OnButtonClicked()
+        {
+            bool? result = await DialogService.ShowMessageBox(
+            "Warning",
+            "Deleting can not be undone!",
+            yesText: "Delete!", cancelText: "Cancel");
+            state = result == null ? "Cancelled" : "Deleted!";
+            StateHasChanged();
+        }
+        }
 
 
     </DialogActions>
