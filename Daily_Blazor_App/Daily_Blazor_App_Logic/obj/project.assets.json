@@ -359,13 +359,15 @@
       ],
       "configFilePaths": [
         "C:\\Users\\sh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Wisej-3.0.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\IceTeaGroup\\Wisej 3.0\\nuget\\": {},
         "https://api.nuget.org/v3/index.json": {},
         "https://nuget.devexpress.com/AJdiHzfvyWMK4ZQvovDm6CoVmbNJTNAaQj3Qeo1OXzqg9eliLe/api": {}
       },
